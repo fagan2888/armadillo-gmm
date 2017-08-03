@@ -1,37 +1,26 @@
-Armadillo C++ Linear Algebra Library
-http://arma.sourceforge.net
-
-Copyright 2008-2016 Conrad Sanderson (http://conradsanderson.id.au)
-Copyright 2008-2016 National ICT Australia (NICTA)
-
-
-
 Contents
 ========
 
  1: Introduction
- 2: Citation Details
- 3: Distribution License
+ 2: Distribution License
+ 3: Compilers and External Dependencies
 
- 4: Compilers and External Dependencies
+ 4: Linux and Mac OS X: Installation
+ 5: Linux and Mac OS X: Compiling & Linking
 
- 5: Linux and Mac OS X: Installation
- 6: Linux and Mac OS X: Compiling & Linking
+ 6: Windows: Installation
+ 7: Windows: Compiling & Linking
 
- 7: Windows: Installation
- 8: Windows: Compiling & Linking
+ 8: Support for OpenBLAS and Intel MKL
+ 9: Support for ATLAS
+10: Support for C++11/C++14 Features
+11: Support for OpenMP
 
- 9: Support for OpenBLAS and Intel MKL
-10: Support for ATLAS
-11: Support for C++11/C++14 Features
-12: Support for OpenMP
+12: API Documentation
+13: API Stability and Versioning
+14: Bug Reports and Frequently Asked Questions
 
-13: API Documentation
-14: API Stability and Versioning
-15: Bug Reports and Frequently Asked Questions
-
-16: MEX Interface to Octave/Matlab
-17: Related Software
+15: MEX Interface to Octave/Matlab
 
 
 
@@ -64,20 +53,7 @@ Authors:
 
 
 
-2: Citation Details
-===================
-
-Please cite the following article if you use Armadillo in your
-research and/or software. Citations are useful for the continued
-development and maintenance of the library.
-
-  Conrad Sanderson and Ryan Curtin.
-  Armadillo: a template-based C++ library for linear algebra.
-  Journal of Open Source Software, Vol. 1, pp. 26, 2016.
-
-
-
-3: Distribution License
+2: Distribution License
 =======================
 
 Armadillo can be used in both open-source and proprietary (closed-source) software.
@@ -93,7 +69,7 @@ informational purposes only and do not modify the License.
 
 
 
-4: Compilers and External Dependencies
+3: Compilers and External Dependencies
 ======================================
 
 Armadillo makes extensive use of template meta-programming, recursive templates
@@ -115,7 +91,7 @@ For example, for GCC and Clang compilers use -O2 or -O3
 
 
 
-5: Linux and Mac OS X: Installation
+4: Linux and Mac OS X: Installation
 ===================================
 
 * Step 1:
@@ -188,7 +164,7 @@ For example, for GCC and Clang compilers use -O2 or -O3
 
 
 
-6: Linux and Mac OS X: Compiling & Linking
+5: Linux and Mac OS X: Compiling & Linking
 ==========================================
 
 The "examples" directory contains several quick example programs
@@ -212,7 +188,7 @@ On Mac OS X, replace -lblas -llapack with -framework Accelerate
 
 
 
-7: Windows: Installation
+6: Windows: Installation
 ========================
 
 The installation is comprised of 3 steps:
@@ -242,7 +218,7 @@ The installation is comprised of 3 steps:
 
 
 
-8: Windows: Compiling & Linking
+7: Windows: Compiling & Linking
 ===============================
 
 Within the "examples" folder, there is an MSVC project named "example1_win64"
@@ -278,7 +254,7 @@ we recommend using either Mac OS X or a Linux based operating system:
 
 
 
-9: Support for OpenBLAS and Intel MKL
+8: Support for OpenBLAS and Intel MKL
 =====================================
 
 Armadillo can use OpenBLAS or Intel Math Kernel Library (MKL) as high-speed
@@ -331,8 +307,8 @@ the CMake based installation. Comment out the lines containing:
 
 
 
-10: Support for ATLAS
-=====================
+9: Support for ATLAS
+====================
 
 Armadillo can use the ATLAS library for faster versions of
 certain LAPACK and BLAS functions. Not all ATLAS functions are
@@ -348,7 +324,7 @@ remove the old version and use the standard LAPACK library.
 
 
 
-11: Support for C++11 / C++14 Features
+10: Support for C++11 / C++14 Features
 ======================================
 
 Armadillo works with compilers supporting the older C++98 and C++03 standards,
@@ -368,7 +344,7 @@ which creates lots of short lived temporaries that are not handled by auto.
 
 
 
-12: Support for OpenMP
+11: Support for OpenMP
 ======================
 
 Armadillo can use OpenMP to automatically speed up computationally
@@ -383,7 +359,7 @@ may lead to speed regressions on recent processors.
 
 
 
-13: API Documentation
+12: API Documentation
 =====================
 
 Documentation of functions, classes and options is available at:
@@ -395,7 +371,7 @@ which can be viewed with a web browser.
 
 
 
-14: API Stability and Versioning
+13: API Stability and Versioning
 ================================
 
 Each release of Armadillo has its public API (functions, classes, constants)
@@ -431,7 +407,7 @@ implementation details, and may change or be removed without notice.
 
 
 
-15: Bug Reports and Frequently Asked Questions
+14: Bug Reports and Frequently Asked Questions
 ==============================================
 
 Armadillo has gone through extensive testing and
@@ -454,25 +430,8 @@ answers to frequently asked questions are at:
 
 
 
-16: MEX Interface to Octave/Matlab
+15: MEX Interface to Octave/Matlab
 ==================================
 
 The "mex_interface" folder contains examples of how to interface
 Octave/Matlab with C++ code that uses Armadillo matrices.
-
-
-
-17: Related Software
-====================
-
-* MLPACK: C++ library for machine learning and pattern recognition, built on top of Armadillo.
-  http://mlpack.org
-  
-* SigPack: C++ signal processing library using Armadillo
-  https://sourceforge.net/projects/sigpack/
-
-* libpca: C++ library for principal component analysis
-  https://sourceforge.net/projects/libpca/
-  
-* matlab2cpp: conversion of Matlab code to Armadillo based C++ code
-  https://github.com/emc2norway/m2cpp
