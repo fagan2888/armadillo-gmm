@@ -1,0 +1,30 @@
+{
+  "@context": "https://raw.githubusercontent.com/codemeta/codemeta/master/codemeta.jsonld",
+  "@type": "Code",
+  "author": [
+    {
+      "@id": "0000-0002-0049-4501",
+      "@type": "Person",
+      "email": "",
+      "name": "Conrad Sanderson",
+      "affiliation": "Data61, CSIRO, Australia; University of Queensland, Australia; Arroyo Consortium"
+    },
+    {
+      "@id": "0000-0002-9903-8214",
+      "@type": "Person",
+      "email": "",
+      "name": "Ryan Curtin",
+      "affiliation": "Symantec Corporation, USA; Arroyo Consortium"
+    }
+  ],
+  "identifier": "http://dx.doi.org/10.5281/zenodo.838398",
+  "codeRepository": "https://github.com/conradsnicta/armadillo-gmm",
+  "datePublished": "2017-08-03",
+  "dateModified": "2017-08-03",
+  "dateCreated": "2017-08-03",
+  "description": "Multi-threaded Gaussian mixture models (GMMs) and Expectation Maximisation",
+  "keywords": "modelling, statistics, numerics",
+  "license": "Apache 2.0",
+  "title": "gmm_diag and gmm_full",
+  "version": ""
+}
