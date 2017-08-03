@@ -1,11 +1,11 @@
 # gmm_diag and gmm_full: C++ classes for multi-threaded Gaussian mixture models and Expectation-Maximisation
 
-The *gmm_diag* and gmm_full classes provide multi-threaded (parallelised) implementations
+The *gmm_diag* and *gmm_full* classes provide multi-threaded (parallelised) implementations
 of Gaussian mixture models (GMMs) and the associated Expectation-Maximisation (EM) training algorithm.
 
 The *gmm_diag* class is specifically tailored for diagonal covariance matrices
 (all entries outside the main diagonal in each covariance matrix are assumed to be zero),
-while the gmm_full class is tailored for full covariance matrices.
+while the *gmm_full* class is tailored for full covariance matrices.
 The *gmm_diag* class is typically much faster to train and use than the *gmm_full* class,
 at the potential cost of some reduction in modelling accuracy.
 
