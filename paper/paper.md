@@ -20,7 +20,7 @@ affiliations:
     index: 3
   - name: Arroyo Consortium
     index: 4
-date: 2 August 2016
+date: 3 August 2016
 bibliography: paper.bib
 ---
 
@@ -28,12 +28,12 @@ bibliography: paper.bib
 
 Modelling multivariate data through a convex mixture of Gaussians,
 also known as a Gaussian mixture model (GMM),
-has many uses in fields such as signal processing,
+has many uses in various fields such as signal processing,
 statistics, econometrics, pattern recognition, and machine learning [@Bishop_2006].
 Each Gaussian component in a GMM is described with a weight, mean vector (centroid), and covariance matrix.
 
 *gmm_diag* and *gmm_full* are C++ classes which provide multi-threaded (parallelised) implementations of GMMs
-and the associated Expectation-Maximisation (EM) training algorithm [@Moon96,@McLachlan_2008].
+and the associated Expectation-Maximisation (EM) training algorithm [@Moon96][@McLachlan_2008].
 The *gmm_diag* class is specifically tailored for diagonal covariance matrices
 (all entries outside the main diagonal in each covariance matrix are assumed to be zero),
 while the *gmm_full* class is tailored for full covariance matrices.
@@ -54,7 +54,7 @@ and ensuring the covariance matrices stay positive-definite.
 To achieve multi-threading, the EM training algorithm has been reformulated into a MapReduce-like framework [@MapReduce_2004]
 and implemented with the aid of OpenMP pragma directives [@OpenMP_2007].
 As such, the EM algorithm runs much quicker on multi-core machines when OpenMP is enabled during compilation
-(for example, using the -fopenmp option in GCC and clang compilers).
+(for example, using the ```-fopenmp``` option in GCC and clang compilers).
 
 The *gmm_diag* and *gmm_full* classes are included in version 7.960 of the Armadillo C++ library [@Armadillo_2016],
 with the underlying mathematical details described in [@Arxiv_1707_09094].
