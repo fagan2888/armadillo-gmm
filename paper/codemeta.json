@@ -22,7 +22,7 @@
   "datePublished": "2017-08-03",
   "dateModified": "2017-08-03",
   "dateCreated": "2017-08-03",
-  "description": "Multi-threaded Gaussian mixture models (GMMs) and Expectation Maximisation",
+  "description": "gmm_diag and gmm_full: C++ classes for multi-threaded Gaussian mixture models and Expectation-Maximisation",
   "keywords": "modelling, statistics, numerics",
   "license": "Apache 2.0",
   "title": "gmm_diag and gmm_full",

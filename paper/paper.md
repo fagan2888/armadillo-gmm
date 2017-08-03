@@ -1,5 +1,5 @@
 ---
-title: 'gmm_diag and gmm_full: Multi-Threaded C++ Implementations of Gaussian Mixture Models and Expectation-Maximisation'
+title: 'gmm_diag and gmm_full: C++ classes for multi-threaded Gaussian mixture models and Expectation-Maximisation'
 tags:
   - modelling
   - statistics
