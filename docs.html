@@ -1641,6 +1641,14 @@ F.save("mat_field");
 <br><b>sp_cx_mat</b>
 <ul>
 <li>
+Classes for sparse matrices, with elements stored in <a href="http://en.wikipedia.org/wiki/Sparse_matrix">compressed sparse column (CSC) format</a>
+</li>
+<br>
+<li>
+Intended for large matrices where only a small minority of the elements are non-zero
+</li>
+<br>
+<li>
 The root sparse matrix class is <b>SpMat&lt;</b><i>type</i><b>&gt;</b>, where <i>type</i> is one of:
 <ul>
 <li>
@@ -1648,6 +1656,16 @@ The root sparse matrix class is <b>SpMat&lt;</b><i>type</i><b>&gt;</b>, where <i
 <i>short</i>, <i>int</i>, <i>long</i> and unsigned versions of <i>short</i>, <i>int</i>, <i>long</i>
 </li>
 </ul>
+</li>
+<br>
+<li>
+This class behaves in a similar manner to the <a href="#Mat">Mat</a> class,
+however, member functions which set all elements to non-zero values (and hence do not make sense for sparse matrices) have been deliberately omitted;
+examples of omitted functions: <a href="#fill">.fill()</a>, <a href="#ones_member">.ones()</a>, +=&nbsp;scalar, etc.
+</li>
+<br>
+<li>
+<b>NOTE:</b> incrementally populating SpMat via <a href="#element_access">element access operators</a> is currently inefficient; use <a href="#batch_constructors_sp_mat">batch insertion constructors</a> instead
 </li>
 <br>
 <li>
@@ -1745,17 +1763,7 @@ Constructors:
 </ul>
 <br>
 <li>
-Elements are stored in the  <a href="http://en.wikipedia.org/wiki/Sparse_matrix">compressed sparse column (CSC) format</a>
-</li>
-<br>
-<li>
 All elements are treated as zero by default (ie. the matrix is initialised to contain zeros)
-</li>
-<br>
-<li>
-This class behaves in a similar manner to the <a href="#Mat">Mat</a> class,
-however, member functions which set all elements to non-zero values (and hence do not make sense for sparse matrices) have been deliberately omitted;
-examples of omitted functions: <a href="#fill">.fill()</a>, <a href="#ones_member">.ones()</a>, +=&nbsp;scalar, etc.
 </li>
 <br>
 <li>
@@ -1768,10 +1776,6 @@ Batch insertion constructors:
 <li>form&nbsp;4: <code>sp_mat(<i>rowind</i>, <i>colptr</i>, <i>values</i>, <i>n_rows</i>, <i>n_cols</i>)</code></li>
 <br>
 <ul>
-<li>
-Using batch insertion constructors is generally much faster than consecutively inserting values using <a href="#element_access">element access operators</a>
-</li>
-<br>
 <li>
 For forms&nbsp;1,&nbsp;2,&nbsp;3,
 <i>locations</i> is a dense matrix of type <i>umat</i>, with a size of <i>2</i>&nbsp;x&nbsp;<i>N</i>, where <i>N</i> is the number of values to be inserted;
@@ -1821,9 +1825,9 @@ If <i>check_for_zeros</i> is set to <i>false</i>, the <i>values</i> vector is as
 <b>Caveats:</b>
 <ul>
 <li>support for sparse matrices in this version is <b>preliminary</b></li>
+<li>using <a href="#element_access">element access operators</a> to incrementally construct a sparse matrix is currently inefficient; use <a href="#batch_constructors_sp_mat">batch insertion constructors</a> instead</li>
 <li>the following subset of operations currently works with sparse matrices:
 <ul>
-<li><a href="#element_access">element access</a></li>
 <li>fundamental arithmetic <a href="#operators">operations</a> (such as addition and multiplication)</li>
 <li><a href="#submat">submatrix views</a> (contiguous forms only)</li>
 <li><a href="#diag">diagonal views</a></li>
@@ -1846,17 +1850,10 @@ If <i>check_for_zeros</i> is set to <i>false</i>, the <i>values</i> vector is as
 Examples:
 <ul>
 <pre>
-sp_mat A(5,6);
-sp_mat B(6,5);
-
-A(0,0) = 1;
-A(1,0) = 2;
-
-B(0,0) = 3;
-B(0,1) = 4;
+sp_mat A = sprandu(1000, 2000, 0.01);
+sp_mat B = sprandu(2000, 1000, 0.01);
 
 sp_mat C = 2*B;
-
 sp_mat D = A*C;
 
 
@@ -2304,8 +2301,8 @@ For example: <code>for(uword&nbsp;i=0;&nbsp;i&lt;X.n_elem;&nbsp;++i)&nbsp;{&nbsp
 </li>
 <br>
 <li>
-<b>Caveat</b>: for <a href="#SpMat">sparse matrices</a>, using element access operators to insert values via loops can be inefficient;
-you may wish to use <a href="#batch_constructors_sp_mat">batch insertion constructors</a> instead
+<b>Caveat</b>: using element access operators to set values in <a href="#SpMat">sp_mat</a> is very inefficient;
+use <a href="#batch_constructors_sp_mat">batch insertion constructors</a> instead
 </li>
 <br>
 <li>
