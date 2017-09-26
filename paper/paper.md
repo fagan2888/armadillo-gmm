@@ -20,20 +20,19 @@ affiliations:
     index: 3
   - name: Arroyo Consortium
     index: 4
-date: 3 August 2016
+date: 27 September 2016
 bibliography: paper.bib
 ---
 
 # Summary
 
-Modelling multivariate data through a convex mixture of Gaussians,
+Statistical modelling of multivariate data through a convex mixture of Gaussians,
 also known as a Gaussian mixture model (GMM),
-has many uses in various fields such as signal processing,
-statistics, econometrics, pattern recognition, and machine learning [@Bishop_2006].
-Each Gaussian component in a GMM is described with a weight, mean vector (centroid), and covariance matrix.
+has many applications in fields such as signal processing, econometrics, and pattern recognition [@Bishop_2006].
+Each component (Gaussian) in a GMM is parameterised with a weight, mean vector (centroid), and covariance matrix.
 
 *gmm_diag* and *gmm_full* are C++ classes which provide multi-threaded (parallelised) implementations of GMMs
-and the associated Expectation-Maximisation (EM) training algorithm [@Moon96][@McLachlan_2008].
+and the associated Expectation-Maximisation (EM) algorithm for learning the underlying parameters from training data [@Moon96][@McLachlan_2008].
 The *gmm_diag* class is specifically tailored for diagonal covariance matrices
 (all entries outside the main diagonal in each covariance matrix are assumed to be zero),
 while the *gmm_full* class is tailored for full covariance matrices.
@@ -41,8 +40,8 @@ The *gmm_diag* class is typically much faster to train and use than the *gmm_ful
 at the potential cost of some reduction in modelling accuracy.
 
 The interface for the *gmm_diag* and *gmm_full* classes
-allows the user full control over the parameters for GMM fitting,
-as well as easy and flexible access to the trained model.
+allows the user easy and flexible access to the trained model,
+as well as control over the underlying parameters.
 Specifically, the two classes contain functions for likelihood evaluation,
 vector quantisation, histogram generation, data synthesis, and parameter modification,
 in addition to training (learning) the GMM parameters via the EM algorithm.
