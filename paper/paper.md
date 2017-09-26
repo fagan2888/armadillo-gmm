@@ -20,7 +20,7 @@ affiliations:
     index: 3
   - name: Arroyo Consortium
     index: 4
-date: 27 September 2016
+date: 27 September 2017
 bibliography: paper.bib
 ---
 
