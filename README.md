@@ -1,5 +1,7 @@
 # gmm_diag and gmm_full: C++ classes for multi-threaded Gaussian mixture models and Expectation-Maximisation
 
+[![status](http://joss.theoj.org/papers/c7f0d840fec6ea426c07cf4a83f964f6/status.svg)](http://joss.theoj.org/papers/c7f0d840fec6ea426c07cf4a83f964f6)
+
 The *gmm_diag* and *gmm_full* classes provide multi-threaded (parallelised) implementations
 of Gaussian mixture models (GMMs) and the associated Expectation-Maximisation (EM) training algorithm.
 
