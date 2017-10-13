@@ -20,7 +20,7 @@ affiliations:
     index: 3
   - name: Arroyo Consortium
     index: 4
-date: 27 September 2017
+date: 12 October 2017
 bibliography: paper.bib
 ---
 
@@ -50,7 +50,7 @@ and promote convergence of EM based training,
 such as keeping as much as possible of the internal computations in the log domain,
 and ensuring the covariance matrices stay positive-definite.
 
-To achieve multi-threading, the EM training algorithm has been reformulated into a MapReduce-like framework [@MapReduce_2004]
+To achieve multi-threading, the EM training algorithm has been reformulated into a MapReduce-like framework [@MapReduce_2008]
 and implemented with the aid of OpenMP pragma directives [@OpenMP_2007].
 As such, the EM algorithm runs much quicker on multi-core machines when OpenMP is enabled during compilation
 (for example, using the ```-fopenmp``` option in GCC and clang compilers).
